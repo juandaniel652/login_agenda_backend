@@ -10,7 +10,7 @@ import os
 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("loginjwt5738473847_e$siej&%$")
 
 
 if not SECRET_KEY:
