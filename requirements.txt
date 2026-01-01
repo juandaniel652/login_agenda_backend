@@ -1,11 +1,15 @@
 fastapi
 uvicorn
+gunicorn==21.2.0
+
 sqlalchemy
 psycopg2-binary
+
 python-dotenv
 pydantic[email]
-gunicorn==21.2.0
-python-jose
 pydantic-settings
+
+python-jose[cryptography]
+
 passlib[argon2]
 argon2-cffi
