@@ -15,9 +15,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:5173",
         "https://loginagenda.netlify.app/",
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://localhost:5500",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -33,18 +34,10 @@ app.include_router(
     tags=["Authentication"],
 )
 
-# =========================
-# System endpoints
-# =========================
-@app.get("/", tags=["System"])
+@app.get("/")
 def root():
     return {
         "service": "auth-service",
         "status": "running",
         "version": app.version,
     }
-
-
-@app.get("/health", tags=["System"])
-def health_check():
-    return {"status": "ok"}
