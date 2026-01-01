@@ -1,0 +1,83 @@
+main.py
+--------------------------
+Crea la app
+
+Registra middlewares
+
+Incluye routers
+
+No tiene lógica
+
+--------------------------
+
+api/
+
+Solo HTTP
+
+Recibe requests
+
+Devuelve responses
+
+Llama a services
+
+Nunca:
+
+Accede directo a la DB
+
+Hace lógica compleja
+
+--------------------------
+
+services/
+
+Reglas de negocio
+
+Login
+
+Registro
+
+Validaciones complejas
+
+--------------------------
+
+repositories/
+
+SQL puro u ORM
+
+CRUD
+
+Ninguna lógica de negocio
+
+--------------------------
+
+schemas/
+
+Validación de entrada
+
+Forma de salida
+
+Nunca lógica
+
+--------------------------
+
+models/
+
+Representan tablas
+
+Solo estructura
+
+--------------------------
+
+core/
+
+Seguridad
+
+Configuración
+
+JWT
+
+Hashing
+
+Variables de entorno
+
+--------------------------

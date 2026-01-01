@@ -1,0 +1,13 @@
+Tipo de DB: PostgreSQL
+
+Auth: JWT
+
+Roles: admin, luego user
+
+--------------------------
+
+auth:
+
+POST   /auth/login
+POST   /auth/register
+GET    /auth/me
