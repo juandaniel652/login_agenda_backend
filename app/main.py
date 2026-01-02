@@ -10,16 +10,20 @@ app = FastAPI(
 )
 
 # =========================
-# CORS
+# CORS CONFIGURACION
 # =========================
+# Importante: las URLs deben ir sin "/" final
+# allow_origins acepta solo origenes exactos (protocol + dominio + puerto)
+origins = [
+    "https://loginagenda.netlify.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://localhost:5500",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://loginagenda.netlify.app/",
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "http://localhost:5500",
-    ],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -34,6 +38,9 @@ app.include_router(
     tags=["Authentication"],
 )
 
+# =========================
+# Healthcheck / Root
+# =========================
 @app.get("/")
 def root():
     return {
