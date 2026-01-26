@@ -16,6 +16,7 @@ app = FastAPI(
 # allow_origins acepta solo origenes exactos (protocol + dominio + puerto)
 origins = [
     "https://loginagenda.netlify.app",
+    "https://andros-net.com.ar/agenda/",
     "http://localhost:5173",
     "http://localhost:3000",
     "http://localhost:5500",
